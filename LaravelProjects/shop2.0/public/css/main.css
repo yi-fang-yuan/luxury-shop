@@ -1,0 +1,30 @@
+.nav-link{
+    color:white;
+    margin-left: 50px;
+}
+.navbar-brand{
+    margin-left: 100px;
+}
+.img-fluid{
+    max-width:100%;
+    height: auto;
+}
+@media screen and (min-width: 1000px){
+    .img-fluid{
+        height: 550px;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .card-img-top{
+        height: 245px;
+    }
+}
+.gucciContainer{
+    margin-top: 100px;
+
+}
+
+.link{
+    color:gray;
+}
