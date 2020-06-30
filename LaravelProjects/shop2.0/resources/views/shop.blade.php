@@ -7,11 +7,12 @@
             <div class="col-lg-2">
                 <ul class="list-group ">
                     @foreach($categories as $category)
-                        <li class="list-group-item"><a href="{{route('shop.index',['category'=>$category->id])}}">{{$category->name}}</a></li>
+                        <li class="list-group-item"><a href="{{route('shop.index',['category'=> $category])}}">{{$category->name}}</a></li>
                     @endforeach
                 </ul>
             </div>
             <div class="col-lg-10">
+                <h2 class="text-center pb-3">{{$categoryName}}</h2>
             <div class="card-columns">
                     @foreach($products as $product)
                     <div class="card">
@@ -23,7 +24,9 @@
                     </div>
                     @endforeach
             </div>
+                {{$products->appends(Request::only('category'))->links()}}
             </div>
+
         </div>
     </div>
     </div>

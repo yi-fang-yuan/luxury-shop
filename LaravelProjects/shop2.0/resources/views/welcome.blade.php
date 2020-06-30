@@ -14,20 +14,17 @@
     <body>
     <div>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark ">
-            <a class="navbar-brand ml-70" href="#">YiYi Luxury</a>
+            <a class="navbar-brand ml-70" href="/">YiYi Luxury</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav  ml-5" >
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">SHOP <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('shop.index')}}">SHOP <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">CATEGORIES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="{{route('cart.index')}}">CART <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
@@ -68,25 +65,25 @@
             <div class="container mt-5">
                 <div class="card-deck">
                     <div class="card">
-                        <a href="/shop/gucci"><img class="card-img-top" src="image/gucciWallet.jpg" alt="Card image cap"></a>
+                        <a href="{{route('shop.index',['category'=> 1])}}"><img class="card-img-top" src="image/gucciWallet.jpg" alt="Card image cap"></a>
                         <div class="card-body">
                             <p class="text-center font-weight-bold">Gucci</p>
                         </div>
                     </div>
                     <div class="card">
-                        <a href="/shop/prada"><img class="card-img-top " src="image/pradaBag.png" alt="Card image cap"></a>
+                        <a href="{{route('shop.index',['category'=> 2])}}"><img class="card-img-top " src="image/pradaBag.png" alt="Card image cap"></a>
                         <div class="card-body">
                             <p class="text-center font-weight-bold">Prada</p>
                         </div>
                     </div>
                     <div class="card">
-                        <a href="/shop/hermes"><img class="card-img-top" src="image/hermesBelt.jpg" alt="Card image cap"></a>
+                        <a href="{{route('shop.index',['category'=> 3])}}"><img class="card-img-top" src="image/hermesBelt.jpg" alt="Card image cap"></a>
                         <div class="card-body">
                             <p class="text-center font-weight-bold">Hermes</p>
                         </div>
                     </div>
                     <div class="card">
-                        <a href="/shop/dolce"><img class="card-img-top" src="image/DolceRing.jpg" alt="Card image cap"></a>
+                        <a href="{{route('shop.index',['category'=> 4])}}"><img class="card-img-top" src="image/DolceRing.jpg" alt="Card image cap"></a>
                         <div class="card-body">
                             <p class="text-center font-weight-bold">Dolce & Gabbana</p>
                         </div>
