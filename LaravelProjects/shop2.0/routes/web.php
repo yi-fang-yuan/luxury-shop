@@ -19,7 +19,9 @@ Route::get('/shop/{product}','gucciController@show')->name('shop');
 
 Route::get('/cart','CartController@index')->name('cart.index');
 Route::post('/cart','CartController@store')->name('cart.store');
+Route::put('/cart/{product}','CartController@update')->name('cart.update');
 Route::delete('/cart/{delete}','CartController@delete')->name('cart.delete');
-Route::get('empty',function(){
-    Cart::destroy();
-});
+
+Route::get('/checkout','CheckOutController@index')->name('checkout.index');
+Route::post('/checkout','CheckOutController@store')->name('checkout.store');
+Route::get('/paid','paidController@index')->name('paid.index');

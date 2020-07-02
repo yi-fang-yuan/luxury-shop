@@ -44,8 +44,17 @@
                                         </div>
                                     </div>
                                 </th>
-                                <td class="border-0 align-middle"><strong>${{$item->price}}</strong></td>
-                                <td class="border-0 align-middle"><strong>1</strong></td>
+                                <td class="border-0 align-middle"><strong>${{$item->subtotal}}</strong></td>
+                                <td class="border-0 align-middle">
+                                    <strong>
+                                        <select class="quantity" data-id="{{$item->rowId}}">
+                                            <option {{ $item->qty == 1 ? 'selected' : '' }}>1</option>
+                                            <option {{ $item->qty == 2 ? 'selected' : '' }}>2</option>
+                                            <option {{ $item->qty == 3 ? 'selected' : '' }}>3</option>
+                                            <option {{ $item->qty == 4 ? 'selected' : '' }}>4</option>
+                                            <option {{ $item->qty == 5 ? 'selected' : '' }}>5</option>
+
+                                        </select></strong></td>
                                 <td class="border-0 align-middle">
                                     <form action="{{route('cart.delete',$item->rowId)}}" method="POST">
                                         @csrf
@@ -91,7 +100,7 @@
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
                                 <h5 class="font-weight-bold">${{Cart::total()}}</h5>
                             </li>
-                        </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+                        </ul><a href="{{route(('checkout.index'))}}" class="btn btn-dark rounded-pill py-2 btn-block">Proceed to checkout</a>
                     </div>
                 </div>
             </div>
@@ -99,3 +108,19 @@
         </div>
     </div>
 @endsection
+
+@section('extra-js')
+<script src="{{asset('js/app.js')}}"></script>
+    <script>
+        (function(){
+           const quantity = document.querySelectorAll('.quantity')
+           quantity.forEach(element =>element.addEventListener('change', async function(){
+               const id = element.getAttribute('data-id');
+               const res = await axios.put(`/cart/${id}`,{
+                   quantity: this.value
+               });
+              window.location.href= '{{route('cart.index')}}'
+           }))
+        })();
+    </script>
+    @endsection

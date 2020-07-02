@@ -14,7 +14,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "olimortimer/laravelshoppingcart": "^4.0"
+        "olimortimer/laravelshoppingcart": "^4.0",
+        "cartalyst/stripe-laravel": "^12.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

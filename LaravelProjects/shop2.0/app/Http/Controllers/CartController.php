@@ -19,5 +19,9 @@ class CartController extends Controller
         Cart::remove($id);
         return redirect()->route('cart.index')->with('success_message','Item has been removed!');
     }
-
+    public function update($id){
+        Cart::update($id,request()->quantity);
+        session()->flash('success_message','added new item');
+        return response()->json(['success'=>true]);
+    }
 }
