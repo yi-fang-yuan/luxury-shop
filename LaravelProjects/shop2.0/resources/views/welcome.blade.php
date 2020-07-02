@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav  ml-5" >
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('shop.index')}}">SHOP <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('shop.index')}}">Shop <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('cart.index')}}">CART <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{route('cart.index')}}">Cart <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>

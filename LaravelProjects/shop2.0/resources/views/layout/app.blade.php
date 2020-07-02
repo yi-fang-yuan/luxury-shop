@@ -21,10 +21,23 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav  ml-5" >
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('shop.index')}}">SHOP <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('shop.index')}}">Shop <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('cart.index')}}">CART @if(Cart::count() > 0 )<p class="d-inline-block text-white pl-2 mb-0">{{Cart::count()}}</p> @endif<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('cart.index')}}">Cart @if(Cart::count() > 0 )<p class="d-inline-block text-white pl-2 mb-0">{{Cart::count()}}</p> @endif<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Categories</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{{route('shop.index',['category'=> 1])}}">Gucci</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{route('shop.index',['category'=> 2])}}">Prada</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{route('shop.index',['category'=> 3])}}">Hermes</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{route('shop.index',['category'=> 4])}}">Dolce & Gabbana</a>
+                        <div class="dropdown-divider"></div>
+                    </div>
                 </li>
             </ul>
         </div>

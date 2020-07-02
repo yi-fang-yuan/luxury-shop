@@ -72,7 +72,7 @@ class ProductsTableSeeder extends Seeder
         //Dolce
         for ($i = 1; $i < 15; $i++) {
             Product::create([
-                'name' => 'Dolce & Gabbana Jewelry' . $i,
+                'name' => 'Dolce Jewelry' . $i,
                 'category_id' => 4,
                 'slug' => 'dolce-' . $i,
                 'details' => 'Made In Italy',
